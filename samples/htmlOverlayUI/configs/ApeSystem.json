@@ -8,7 +8,7 @@
         "uniqueUserNamePrefix": "",
         "sessionGUID": "UNASSIGNED_RAKNET_GUID",
         "sessionResourceLocation": [
-            "/plugins/robotCalibration/resources"
+            "/plugins/htmlOverlayUI/resources"
         ],
         "natPunchThroughServer": {
             "ip": "195.111.2.95",
@@ -24,13 +24,12 @@
     "pluginManager": {
         "plugins": [
             "ApeNodeJsPlugin",
-            "ApeRobotCalibrationPlugin",
             "ApeOgreRenderPlugin",
             "ApeOisUserInputPlugin",
             "ApeCefBrowserPlugin",
+            "ApeHtmlOverlayUIPlugin",
             "ApeAssimpAssetLoaderPlugin",
-            "ApeWebserverPlugin",
-            "ApeKinectPlugin"
+            "ApeWebserverPlugin"
         ]
     }
 }

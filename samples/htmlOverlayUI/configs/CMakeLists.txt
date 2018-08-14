@@ -20,19 +20,18 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-add_subdirectory (configs)
-
-set (SOURCES
-	ApeHtmlUI.cpp
+set (CONFIGS
+	ApeOgreRenderPlugin.json
+	ApeNodeJsPlugin.json
+	ApeX3DLoaderPlugin.json
+	ApeOisUserInputPlugin.json
+	ApeAssimpAssetLoaderPlugin.json
+	ApeSystem.json
 	)
 
-include_directories(
-	${PROJECT_SOURCE_DIR}/common/include
-	)
+add_custom_target(
+    Configs_htmlOverlayUI ALL
+    SOURCES ${CONFIGS}
+)
 
-add_executable (ApeHtmlUI ${SOURCES})
-
-target_link_libraries (ApeHtmlUI ApeSystem ApePluginManager)
-
-set_property (TARGET ApeHtmlUI PROPERTY COMPILE_DEFINITIONS APE_SOURCE_DIR="${APE_SOURCE_DIR}")
-set_property (TARGET ApeHtmlUI PROPERTY FOLDER "Samples/HtmlUI")
+set_property (TARGET Configs_htmlOverlayUI PROPERTY FOLDER "Samples/HtmlOverlayUI/Configs")

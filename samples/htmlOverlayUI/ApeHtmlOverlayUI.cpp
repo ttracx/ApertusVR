@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 {
 	int minExtraArgs = 0;
 	std::stringstream configDir;
-	configDir << APE_SOURCE_DIR << "/samples/htmlUI/configs/";
+	configDir << APE_SOURCE_DIR << "/samples/htmlOverlayUI/configs/";
 	Ape::System::Start(configDir.str().c_str(), true);
 	Ape::System::Stop();
 	return 0;
