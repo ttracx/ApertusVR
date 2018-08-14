@@ -1,12 +1,12 @@
 #include <iostream>
-#include "ApeRobotCalibrationPlugin.h"
+#include "ApeHtmlOverlayUIPlugin.h"
 
-Ape::ApeRobotCalibrationPlugin::ApeRobotCalibrationPlugin()
+Ape::ApeHtmlOverlayUIPlugin::ApeHtmlOverlayUIPlugin()
 {
 	LOG_FUNC_ENTER();
 	mpSystemConfig = Ape::ISystemConfig::getSingletonPtr();
 	mpEventManager = Ape::IEventManager::getSingletonPtr();
-	mpEventManager->connectEvent(Ape::Event::Group::NODE, std::bind(&ApeRobotCalibrationPlugin::eventCallBack, this, std::placeholders::_1));
+	mpEventManager->connectEvent(Ape::Event::Group::NODE, std::bind(&ApeHtmlOverlayUIPlugin::eventCallBack, this, std::placeholders::_1));
 	mpScene = Ape::IScene::getSingletonPtr();
 	mInterpolators = std::vector<std::unique_ptr<Ape::Interpolator>>();
 	mPointCloud = Ape::PointCloudWeakPtr();
@@ -14,18 +14,18 @@ Ape::ApeRobotCalibrationPlugin::ApeRobotCalibrationPlugin()
 	LOG_FUNC_LEAVE();
 }
 
-Ape::ApeRobotCalibrationPlugin::~ApeRobotCalibrationPlugin()
+Ape::ApeHtmlOverlayUIPlugin::~ApeHtmlOverlayUIPlugin()
 {
 	LOG_FUNC_ENTER();
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::eventCallBack(const Ape::Event& event)
+void Ape::ApeHtmlOverlayUIPlugin::eventCallBack(const Ape::Event& event)
 {
 
 }
 
-void Ape::ApeRobotCalibrationPlugin::Init()
+void Ape::ApeHtmlOverlayUIPlugin::Init()
 {
 	LOG_FUNC_ENTER();
 	if (auto userNode = mpScene->getNode(mpSystemConfig->getSceneSessionConfig().generatedUniqueUserNodeName).lock())
@@ -257,7 +257,7 @@ void Ape::ApeRobotCalibrationPlugin::Init()
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::Run()
+void Ape::ApeHtmlOverlayUIPlugin::Run()
 {
 	LOG_FUNC_ENTER();
 	double duration = 0;
@@ -265,29 +265,29 @@ void Ape::ApeRobotCalibrationPlugin::Run()
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(20));
 	}
-	mpEventManager->disconnectEvent(Ape::Event::Group::NODE, std::bind(&ApeRobotCalibrationPlugin::eventCallBack, this, std::placeholders::_1));
+	mpEventManager->disconnectEvent(Ape::Event::Group::NODE, std::bind(&ApeHtmlOverlayUIPlugin::eventCallBack, this, std::placeholders::_1));
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::Step()
+void Ape::ApeHtmlOverlayUIPlugin::Step()
 {
 	LOG_FUNC_ENTER();
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::Stop()
+void Ape::ApeHtmlOverlayUIPlugin::Stop()
 {
 	LOG_FUNC_ENTER();
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::Suspend()
+void Ape::ApeHtmlOverlayUIPlugin::Suspend()
 {
 	LOG_FUNC_ENTER();
 	LOG_FUNC_LEAVE();
 }
 
-void Ape::ApeRobotCalibrationPlugin::Restart()
+void Ape::ApeHtmlOverlayUIPlugin::Restart()
 {
 	LOG_FUNC_ENTER();
 	LOG_FUNC_LEAVE();

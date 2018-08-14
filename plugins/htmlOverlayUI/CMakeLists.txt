@@ -22,21 +22,21 @@
 
 # Add all header and cpp files in the directory to the project
 set (HEADERS
-	ApeRobotCalibrationPlugin.h
+	ApeHtmlOverlayUIPlugin.h
 	)
 
 set (SOURCES 
-	ApeRobotCalibrationPlugin.cpp
+	ApeHtmlOverlayUIPlugin.cpp
 	)
 
 include_directories(
 	${PROJECT_SOURCE_DIR}/common/include 
 	)
 
-add_library (ApeRobotCalibrationPlugin SHARED ${SOURCES} ${HEADERS})
+add_library (ApeHtmlOverlayUIPlugin SHARED ${SOURCES} ${HEADERS})
 
 # Link with dependency libraries
-target_link_libraries (ApeRobotCalibrationPlugin ApePluginManager ApeScene ApeEventManager ApeLogManager)
+target_link_libraries (ApeHtmlOverlayUIPlugin ApePluginManager ApeScene ApeEventManager ApeLogManager)
 
-set_property (TARGET ApeRobotCalibrationPlugin PROPERTY COMPILE_DEFINITIONS APE_SOURCE_DIR="${APE_SOURCE_DIR}")
-set_property (TARGET ApeRobotCalibrationPlugin PROPERTY FOLDER "Plugins")
+set_property (TARGET ApeHtmlOverlayUIPlugin PROPERTY COMPILE_DEFINITIONS APE_SOURCE_DIR="${APE_SOURCE_DIR}")
+set_property (TARGET ApeHtmlOverlayUIPlugin PROPERTY FOLDER "Plugins")

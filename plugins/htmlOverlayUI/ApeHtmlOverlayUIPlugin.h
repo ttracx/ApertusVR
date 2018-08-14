@@ -20,8 +20,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
-#ifndef APE_ROBOTCALIBRATIONPLUGIN_H
-#define APE_ROBOTCALIBRATIONPLUGIN_H
+#ifndef APE_HTMLOVERLAYUIPLUGIN_H
+#define APE_HTMLOVERLAYUIPLUGIN_H
 
 #include <iostream>
 #include <thread>
@@ -59,11 +59,11 @@ SOFTWARE.*/
 #include "ApeIPointCloud.h"
 #include "ApeIUnitTexture.h"
 
-#define THIS_PLUGINNAME "ApeRobotCalibrationPlugin"
+#define THIS_PLUGINNAME "ApeHtmlOverlayUIPlugin"
 
 namespace Ape
 {
-	class ApeRobotCalibrationPlugin : public Ape::IPlugin
+	class ApeHtmlOverlayUIPlugin : public Ape::IPlugin
 	{
 	private:
 		Ape::IEventManager* mpEventManager;
@@ -83,9 +83,9 @@ namespace Ape
 		Ape::NodeWeakPtr mUserNode;
 
 	public:
-		ApeRobotCalibrationPlugin();
+		ApeHtmlOverlayUIPlugin();
 
-		~ApeRobotCalibrationPlugin();
+		~ApeHtmlOverlayUIPlugin();
 
 		void Init() override;
 
@@ -100,14 +100,14 @@ namespace Ape
 		void Restart() override;
 	};
 
-	APE_PLUGIN_FUNC Ape::IPlugin* CreateApeRobotCalibrationPlugin()
+	APE_PLUGIN_FUNC Ape::IPlugin* CreateApeHtmlOverlayUIPlugin()
 	{
-		return new Ape::ApeRobotCalibrationPlugin;
+		return new Ape::ApeHtmlOverlayUIPlugin;
 	}
 
-	APE_PLUGIN_FUNC void DestroyApeRobotCalibrationPlugin(Ape::IPlugin *plugin)
+	APE_PLUGIN_FUNC void DestroyApeHtmlOverlayUIPlugin(Ape::IPlugin *plugin)
 	{
-		delete (Ape::ApeRobotCalibrationPlugin*)plugin;
+		delete (Ape::ApeHtmlOverlayUIPlugin*)plugin;
 	}
 
 	APE_PLUGIN_DISPLAY_NAME(THIS_PLUGINNAME);
@@ -115,7 +115,7 @@ namespace Ape
 	APE_PLUGIN_ALLOC()
 	{
 		LOG(LOG_TYPE_DEBUG, THIS_PLUGINNAME << "_CREATE");
-		ApeRegisterPlugin(THIS_PLUGINNAME, CreateApeRobotCalibrationPlugin, DestroyApeRobotCalibrationPlugin);
+		ApeRegisterPlugin(THIS_PLUGINNAME, CreateApeHtmlOverlayUIPlugin, DestroyApeHtmlOverlayUIPlugin);
 		return 0;
 	}
 }
